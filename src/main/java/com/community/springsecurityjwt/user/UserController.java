@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class UserController {
 
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasRole('USER')")
     @GetMapping("/profile")
     public String profile(){
         return "User profile";
     }
 
-    @PreAuthorize("hasAuthority('MODERATOR')")
+    @PreAuthorize("hasRole('MODERATOR')")
     @GetMapping("/moderate")
     public String moderate(){
         return "Moderator panel";
     }
 
-    @PreAuthorize("hasAuthority('SUPER_ADMIN')")
+    @PreAuthorize("hasRole('SUPER_ADMIN')")
     @GetMapping("/admin")
     public String admin(){
         return "Admin panel";

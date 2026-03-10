@@ -23,4 +23,11 @@ public class OurUserDetailedService implements UserDetailsService {
 
         return new SecurityUser(user);
     }
+    public AppUser findUser(String username){
+        return users.get(username);
+    }
+
+    public void addUser(AppUser user){
+        users.put(user.getUsername(), user);
+    }
 }
